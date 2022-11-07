@@ -43,73 +43,77 @@ const CompEditCliente = () => {
   }
 
   return(
-    <div>
-    <h3>Actualizar Cliente</h3>
-    <form onSubmit={update}>
-         <div className='mb-3'>
-             <label className='form-label'>Nombre</label>
-             <input
-                 value={nombre}
-                 onChange={ (event)=> setNombre(event.target.value)} 
-                 type="text"
-                 className='form-control'
-             />
-          </div>
+    <div className="secundary-view">
+      <form className="formulario" onSubmit={update}>
+        <h2 className="titulo">Actualizar cliente</h2>
 
-          <div className='mb-3'>
-             <label className='form-label'>Apellido paterno</label>
-             <input
-                 value={apellido_paterno}
-                 onChange={ (event)=> setApellido_paterno(event.target.value)} 
-                 type="text"
-                 className='form-control'
-             />
-          </div>
+        <div className="form-item">
+          <input
+            placeholder="Nombre"
+            value={nombre}
+            onChange={(event) => setNombre(event.target.value)}
+            required
+          />
+          <br></br>
+        </div>
 
-          <div className='mb-3'>
-             <label className='form-label'>Apellido materno</label>
-             <input
-                 value={apellido_materno}
-                 onChange={ (event)=> setApellido_materno(event.target.value)} 
-                 type="text"
-                 className='form-control'
-             />
-          </div>
+        <div className="form-item">
+          <input
+            placeholder="Apellido paterno"
+            value={apellido_paterno}
+            onChange={(event) => setApellido_paterno(event.target.value)}
+            required
+          />
+        </div>
 
-          <div className='mb-3'>
-             <label className='form-label'>Telefono</label>
-             <input
-                 value={telefono}
-                 onChange={ (event)=> setTelefono(event.target.value)} 
-                 type="text"
-                 className='form-control'
-             />
-          </div>
+        <div className="form-item">
+          <input
+            placeholder="Apellido materno"
+            value={apellido_materno}
+            onChange={(event) => setApellido_materno(event.target.value)}
+            required
+          />
+        </div>
 
-          <div className='mb-3'>
-             <label className='form-label'>Fecha de nacimiento</label>
-             <input
-                 value={fecha_nacimiento}
-                 onChange={ (event)=> setFecha_nacimiento(event.target.value)} 
-                 type="date"
-                 className='form-control'
-             />
-          </div>
+        <div className="form-item">
+          <input
+            placeholder="Telefono"
+            type="number"
+            value={telefono}
+            onChange={(event) => setTelefono(event.target.value)}
+            required
+          />
+          <br></br>
+        </div>
 
-          <div className='mb-3'>
-             <label className='form-label'>Direccion</label>
-             <input
-                 value={direccion}
-                 onChange={ (event)=> setDireccion(event.target.value)} 
-                 type="text"
-                 className='form-control'
-             />
-          </div>  
-          <button type='submit' className='btn btn-primary'>Guardar</button>                  
-    </form>
- </div>
-  )
+        <div className="form-item">
+          <input
+            placeholder="Fecha de nacimiento"
+            value={fecha_nacimiento}
+            type="date"
+            onChange={(event) => setFecha_nacimiento(event.target.value)}
+            required
+          />
+        </div>
 
+        <div className="form-item">
+          <input
+            placeholder="Direccion"
+            value={direccion}
+            onChange={(event) => setDireccion(event.target.value)}
+          />
+          <br></br>
+        </div>
+
+        <input
+          type="submit"
+          className="mb-3 mt-3 guardar btn btn-outline-primary"
+          value="Guardar"
+        ></input>
+      </form>
+    </div>
+  );
+  
 };
 
 export default CompEditCliente;

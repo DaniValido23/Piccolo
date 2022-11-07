@@ -1,7 +1,7 @@
 import express from "express"
 import cors from "cors"
 import db from "./database/db.js"
-import {routerClientes,routerVendedores} from './routes/routes.js'
+import {routerClientes,routerProveedores,routerVendedores} from './routes/routes.js'
 
 const app = express();
 
@@ -11,6 +11,7 @@ app.use(express.json())
 
 app.use('/cliente',routerClientes)
 app.use('/vendedor',routerVendedores)
+app.use('/proveedor',routerProveedores)
 
 try {
     db.authenticate()

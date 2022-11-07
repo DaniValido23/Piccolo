@@ -24,95 +24,104 @@ const CompCreateVendedor = () =>{
     }
 
     return (
-        <div>
-        <h3>Crear Vendedor</h3>
-        <form onSubmit={store}>
-             <div className='mb-3'>
-                 <label className='form-label'>Nombre</label>
-                 <input
-                     value={Nombre}
-                     onChange={ (event)=> setNombre(event.target.value)} 
-                     type="text"
-                     className='form-control'
-                 />
-              </div>
-    
-              <div className='mb-3'>
-                 <label className='form-label'>Apellido paterno</label>
-                 <input
-                     value={Apellido_Paterno}
-                     onChange={ (event)=> setApellido_paterno(event.target.value)} 
-                     type="text"
-                     className='form-control'
-                 />
-              </div>
-    
-              <div className='mb-3'>
-                 <label className='form-label'>Apellido materno</label>
-                 <input
-                     value={Apellido_Materno}
-                     onChange={ (event)=> setApellido_materno(event.target.value)} 
-                     type="text"
-                     className='form-control'
-                 />
-              </div>
-    
-              <div className='mb-3'>
-                 <label className='form-label'>Fecha de nacimiento</label>
-                 <input
-                     value={Fecha_de_nacimiento}
-                     onChange={ (event)=> setFecha_de_nacimiento(event.target.value)} 
-                     type="date"
-                     className='form-control'
-                 />
-              </div>
+        <div className="secundary-view">
+        <form className="formulario" onSubmit={store}>
+          <h2 className="titulo">Nuevo vendedor</h2>
+  
+          <div className="form-item">
+            <input
+              placeholder="Nombre"
+              value={Nombre}
+              onChange={(event) => setNombre(event.target.value)}
+              required
+            />
+            <br></br>
+          </div>
 
-              <div className='mb-3'>
-                 <label className='form-label'>Fecha de contratacion</label>
-                 <input
-                     value={Fecha_de_contratacion}
-                     onChange={ (event)=> setFecha_de_contratacion(event.target.value)} 
-                     type="date"
-                     className='form-control'
-                 />
-              </div>
-    
+          <div className="form-item">
+            <input
+              placeholder="Apellido paterno"
+              value={Apellido_Paterno}
+              onChange={(event) => setApellido_paterno(event.target.value)}
+              required
+            />
+          </div>
+  
+          <div className="form-item">
+            <input
+              placeholder="Apellido materno"
+              value={Apellido_Materno}
+              onChange={(event) => setApellido_materno(event.target.value)}
+              required
+            />
+          </div>
 
-              <div className='mb-3'>
-                 <label className='form-label'>Telefono</label>
-                 <input
-                     value={Telefono}
-                     onChange={ (event)=> setTelefono(event.target.value)} 
-                     type="text"
-                     className='form-control'
-                 />
-              </div>  
-    
-              <div className='mb-3'>
-                 <label className='form-label'>Direccion</label>
-                 <input
-                     value={Direccion}
-                     onChange={ (event)=> setDireccion(event.target.value)} 
-                     type="text"
-                     className='form-control'
-                 />
-              </div>
-
-              <div className='mb-3'>
-                 <label className='form-label'>Salario</label>
-                 <input
-                     value={Salario}
-                     onChange={ (event)=> setSalario(event.target.value)} 
-                     type="number"
-                     className='form-control'
-                 />
-              </div>
+  
 
 
-              <button type='submit' className='btn btn-primary'>Guardar</button>                  
+          <div className="form-item">
+            <input
+              placeholder="Fecha de nacimiento"
+              value={Fecha_de_nacimiento}
+              type="date"
+              onChange={(event) => setFecha_de_nacimiento(event.target.value)}
+              required
+            />
+            <label className='ms-2'>Fecha de nacimiento</label>
+          </div>
+
+
+          <div className="form-item">
+            <input
+              placeholder="Fecha de contratación"
+              value={Fecha_de_contratacion}
+              type="date"
+              onChange={(event) => setFecha_de_contratacion(event.target.value)}
+              required
+            />
+            <label className='ms-2'>Fecha de contratacion</label>
+          </div>
+  
+          <div className="form-item">
+            <input
+              placeholder="Telefono"
+              type="number"
+              value={Telefono}
+              onChange={(event) => setTelefono(event.target.value)}
+              required
+            />
+            <br></br>
+          </div>
+  
+
+  
+          <div className="form-item">
+            <input
+              placeholder="Direccion"
+              value={Direccion}
+              onChange={(event) => setDireccion(event.target.value)}
+            />
+            <br></br>
+          </div>
+
+
+          <div className="form-item">
+            <input
+              placeholder="Salario"
+              value={Salario}
+              onChange={(event) => setSalario(event.target.value)}
+            />
+            <br></br>
+          </div>
+  
+          <input
+            type="submit"
+            className="mb-3 mt-3 guardar btn btn-outline-primary"
+            value="Guardar"
+          ></input>
         </form>
-     </div>
-    )
+      </div>
+    );
 };   
 
 export default CompCreateVendedor;

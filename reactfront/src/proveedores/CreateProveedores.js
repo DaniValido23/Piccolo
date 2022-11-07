@@ -1,0 +1,88 @@
+import axios from 'axios'
+import {useState} from 'react'
+import { useNavigate} from 'react-router-dom'
+
+const URI = 'http://localhost:8000/proveedor/';
+
+const CompCreateProveedor = () =>{
+    const [Nombre_proveedor, setNombre_proveedor] = useState("");
+    const [Direccion, setDireccion] = useState("");
+    const [Telefono, setTelefono] = useState("");
+    const [Correo, setCorreo] = useState("");
+    const [Descripcion_proveedor, setDescripcion_proveedor] = useState("");
+
+    const navigate = useNavigate();
+
+    const store = async (event) =>{
+        event.preventDefault()
+        await axios.post(URI,{Nombre_proveedor:Nombre_proveedor,Direccion:Direccion,Telefono:Telefono,Correo:Correo,Descripcion_proveedor:Descripcion_proveedor})
+        navigate("/proveedores")
+    }
+
+    return (
+        <div className="secundary-view">
+        <form className="formulario" onSubmit={store}>
+          <h2 className="titulo">Nuevo proveedor</h2>
+  
+          <div className="form-item">
+            <input
+              placeholder="Nombre"
+              value={Nombre_proveedor}
+              onChange={(event) => setNombre_proveedor(event.target.value)}
+              required
+            />
+            <br></br>
+          </div>
+
+          <div className="form-item">
+            <input
+              placeholder="Direccion"
+              type="text"
+              value={Direccion}
+              onChange={(event) => setDireccion(event.target.value)}
+              required
+            />
+          </div>
+
+          <div className="form-item">
+            <input
+              placeholder="Correo"
+              type="email"
+              value={Correo}
+              onChange={(event) => setCorreo(event.target.value)}
+            />
+            <br></br>
+          </div>
+  
+          <div className="form-item">
+            <input
+              placeholder="Telefono"
+              type="number"
+              value={Telefono}
+              onChange={(event) => setTelefono(event.target.value)}
+              required
+            />
+          </div>
+
+  
+          <div className="form-item">
+            <input
+              placeholder="Descripcion"
+              value={Descripcion_proveedor}
+              type="text"
+              onChange={(event) => setDescripcion_proveedor(event.target.value)}
+              required
+            />
+          </div>
+
+          <input
+            type="submit"
+            className="mb-3 mt-3 guardar btn btn-outline-primary"
+            value="Guardar"
+          ></input>
+        </form>
+      </div>
+    );
+};   
+
+export default CompCreateProveedor;

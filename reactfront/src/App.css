@@ -1,10 +1,62 @@
-.App {
+:root {
+  --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+  --orange: #fca61f;
+  --black: #242d49;
+  --gray: #788097;
+  --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+  --pink: #FF919D;
+  --glass: rgba(255, 255, 255, 0.54);
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  --activeItem: #f799a354;
+}
+
+.secundary-view{
+  margin-left: 2rem;
+  width:1000px;
+}
+
+.secundary-view-vendedores{
+  width: 1000px;
+}
+
+
+.botones-vendedor{
+padding-left: 2rem;
+}
+
+.text-buttons{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  color: var(--black);
+  background: linear-gradient(
+    106.37deg,
+    #ffe1bc 29.63%,
+    #ffcfd1 51.55%,
+    #f3c6f1 90.85%
+  );
+
+  min-height: 100vh;
+  min-width: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.AppGlass{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: grid;
+  height: 95%;
+  width: 95%;
+  border-radius: 2rem;
+  background-color: var(--glass);
+  overflow: hidden;
+  grid-template-columns: 11rem auto ;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,16 +65,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 15vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;
@@ -35,4 +77,147 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+  .gradient-custom {
+    /* fallback for old browsers */
+    background: #f093fb;
+
+    padding-bottom: 7px;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
+    }
+
+
+.bg-card{
+  background-color: #BB67FF;
+  color: #BB67FF;
+  
+}
+  
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+
+
+  /*Sidebar*/
+
+  .Sidebar{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-right: 2rem;
+    padding-top: 1rem;
+    padding-left: .5rem;
+    transition: all 300ms ease;
+}
+
+.logo>img{
+    width: 8rem;
+    height: 8rem;
+}
+
+/*Menu*/
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.menuItem{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 2rem;
+  position: relative;
+  transition: all 300ms ease;
+  margin-top: -.5rem;
+  margin-left: 0;
+  width: 150px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+    
+  outline: none;
+  text-decoration: none;
+}
+
+.menuItem:hover{
+  cursor: pointer;
+}
+
+.active{
+  background-color: var(--activeItem);
+  margin-left: 0;
+}
+
+.active::before{
+  content: '';
+  width: 8px;
+  height: 100%;
+  background: var(--pink);
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.formulario{
+  margin-top: 3rem;
+  margin-left: 4rem;
+  margin-bottom: 3rem;
+  width: 30rem;
+  border-radius: 1.5rem;
+  background:rgba(0, 0, 0, 0.019); 
+}
+
+
+.formulario h2{
+  text-align: center;
+  opacity: 1;
+}
+
+
+
+form .form-item{
+  position: relative;
+  margin: 2rem 4rem 0 4rem;
+}
+
+.form-item input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  border-color:var(--pink);
+  border-radius: 1rem;
+  font-size: 16px;
+  background:rgba(255, 255, 255, 0.075); 
+}
+
+.guardar{
+  margin-left: 12.5rem;
+}
+
+.titulo{
+  padding-top: 1rem;
+}
+
+.logo-menu{
+  margin-right: 0.5rem;
+}
+
+.center{
+  text-align: center;
 }

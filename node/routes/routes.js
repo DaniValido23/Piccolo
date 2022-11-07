@@ -14,11 +14,23 @@ import {
   deleteVendedor,
 } from "../controllers/VendedorController.js";
 
+import{
+  getAllProveedores,
+  getProveedor,
+  createProveedor,
+  updateProveedor,
+  deleteProveedor
+} from "../controllers/ProveedorController.js"
+
+
+
 import express from "express";
 
 const routerClientes = express.Router();
 
 const routerVendedores = express.Router();
+
+const routerProveedores = express.Router();
 
 //Clientes
 routerClientes.get("/", getAllClientes);
@@ -34,4 +46,11 @@ routerVendedores.post("/",createVendedor);
 routerVendedores.put("/:id",updateVendedor);
 routerVendedores.delete("/:id",deleteVendedor);
 
-export {routerClientes,routerVendedores}
+//Proveedores
+routerProveedores.get("/",getAllProveedores);
+routerProveedores.get("/:id",getProveedor);
+routerProveedores.post("/",createProveedor);
+routerProveedores.put("/:id",updateProveedor);
+routerProveedores.delete("/:id",deleteProveedor);
+
+export {routerClientes,routerVendedores,routerProveedores}

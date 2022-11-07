@@ -1,0 +1,46 @@
+.Sidebar{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 1rem;
+    padding-left: .5rem;
+    transition: all 300ms ease;
+    padding-bottom: 2rem;
+}
+
+.logo>img{
+    margin-left: .4rem;
+    width: 8rem;
+    height: 8rem;
+}
+
+.title-sidebar{
+    font-style: oblique;
+    text-align: center;
+    font-weight: 500;
+    margin-left: .9rem;
+}
+
+/*Menu*/
+
+.menu{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.menuItem{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    outline: none;
+    text-decoration: none;
+
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
